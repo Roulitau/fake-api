@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/fake-api || exit 1
+cd /home/debianuser/Projet_14-05-2025/fake-api || exit 1
 
 git checkout main
 
