@@ -4,7 +4,7 @@ cd /home/debianuser/Projet_14-05-2025/fake-api || exit 1
 
 git checkout main
 
-# sauver les fichiers modifiés avant le pull
+# sauver les fichiers modifiés avant le pull.
 MODIFIED_BEFORE=$(git status -s)
 
 git pull
