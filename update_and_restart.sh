@@ -1,10 +1,18 @@
 #!/bin/bash
 
-cd /home/debianuser/Projet_14-05-2025/fake-api || exit 1
+cd /home/debianuser/Projet_14-05-2025/fake-api-500-user || exit 1
 
 git checkout main
 
-# sauver les fichiers modifiés avant le pull.
+# Ajouter et commit/push automatique si modifications détectées AVANT le pull
+if [[ -n $(git status --porcelain) ]]; then
+    echo "Des modifications locales détectées, commit et push automatiques…"
+    git add -A
+    git commit -m "commit auto : sauvegarde locale avant pull"
+    git push
+fi
+
+# Enregistrer l'état avant le pull pour journaliser les changements
 MODIFIED_BEFORE=$(git status -s)
 
 git pull
